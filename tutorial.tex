@@ -1,0 +1,36 @@
+\documentclass[a4paper]{article}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl, enumitem}
+
+\setlist[description]{leftmargin=\parindent, labelindent=\parindent}
+
+\author{Wartybix}
+\title{Single GPU pass-through on an AMD RX7900 XT}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This tutorial allows running Microsoft Windows on a VM (virtual machine) on a host machine running Linux, with the VM having direct access to the GPU.
+GPU pass-through allows for performance in games similar to running Windows `bare-metal'.
+Reasons you may want to do this is if a game doesn't quite run well on Proton/WINE, or if you wish to use features that have limited or no support on Linux, like HDR or Tobii eye-tracking (as of time of writing) --- without having to reboot your machine every time in order to switch between Linux and Windows.
+It is also more secure, as the Windows VM does not have access to your physical disk, and cannot overwrite your boot partition during a Windows update \cite{windows-overwrite-grub} for example.
+
+The reason for creating this tutorial is mostly to remind myself on how to set this up on my machine, since figuring this out for myself for the first time was a hair-tearing process.
+Hopefully, it may help anyone else who reads this wanting to set up GPU pass-through for themselves.
+Though, if you don't have the exact same hardware as me, you will likely need to diverge from these steps at some point --- particularly if you have an Nvidia GPU, in which case I would recommend watching BlandManStudios' YouTube video on the topic \cite{BlandManStudios-video}.
+
+\subsection*{My system:}
+\begin{description}
+    \item[OS] Fedora Linux 40
+    \item[CPU] Intel 13700K
+    \item[GPU] AMD RX7900 XT
+\end{description}
+
+\bibliographystyle{IEEEtranN}
+\bibliography{refs}
+
+\end{document}
